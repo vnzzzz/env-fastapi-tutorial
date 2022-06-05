@@ -13,6 +13,3 @@ RUN poetry add fastapi uvicorn gunicorn flake8 black
 
 # app
 COPY ./app/app /app/app
-
-# git
-gitkeep
