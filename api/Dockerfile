@@ -1,6 +1,9 @@
-FROM python:3.9-slim-buster
+FROM python:3.9-buster
 
 # package
+RUN apt update -y && \
+    apt upgrade -y && \
+    apt install -y git 
 RUN pip install --upgrade pip && \
     pip install poetry
 
