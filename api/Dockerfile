@@ -1,5 +1,4 @@
-# FROM python:3.9-slim-buster
-FROM python:3.9-buster
+FROM python:3.9-slim-buster
 
 # package
 RUN pip install --upgrade pip && \
@@ -14,5 +13,3 @@ RUN poetry add fastapi uvicorn gunicorn
 
 # app
 COPY ./app/ /app/app
-
-RUN apt install curl
