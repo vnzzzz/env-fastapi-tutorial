@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  api:
+    container_name: env-fastapi
+    hostname: env-fastapi
+    restart: always
+    tty: true
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    command: poetry run uvicorn app.main:app --port 80 --reload
+    expose:
+      - 80
+    networks:
+      - web
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.env-fastapi.entrypoints=web
+      - traefik.http.routers.env-fastapi.rule=Host(`env-fastapi.localhost`)
+
+networks:
+  web:
+    name: docker-mgr_web
+    external: true
