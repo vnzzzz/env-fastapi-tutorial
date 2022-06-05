@@ -9,9 +9,11 @@ services:
     build:
       context: ./api
       dockerfile: Dockerfile
-    command: .venv/bin/gunicorn -w 1 -k uvicorn.workers.UvicornWorker --capture-output --log-level warning --access-logfile - --bind :80 app.main:app
+    command: .venv/bin/gunicorn -w 1 -k uvicorn.workers.UvicornWorker --capture-output --log-level warning --access-logfile - --bind :80 --reload app.main:app
     expose:
       - 80
+    volumes:
+      - ./api/app/app:/app/app
     networks:
       - web
     labels:

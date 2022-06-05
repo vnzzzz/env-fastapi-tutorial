@@ -9,7 +9,7 @@ RUN poetry new app
 WORKDIR /app
 RUN poetry config --local virtualenvs.path ".venv" && \
     poetry config --local virtualenvs.in-project true 
-RUN poetry add fastapi uvicorn gunicorn
+RUN poetry add fastapi uvicorn gunicorn flake8 black
 
 # app
-COPY ./app/ /app/app
+COPY ./app/app /app/app

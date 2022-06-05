@@ -1,0 +1,28 @@
+{
+	"name": "env-fastapi",
+	"dockerComposeFile": [
+		"../docker-compose.yml"
+	],
+	"service": "api",
+	"workspaceFolder": "/app",
+	"settings": {
+		// linter
+		"python.linting.pylintEnabled": false,
+		"python.linting.flake8Enabled": true,
+		"python.linting.lintOnSave": true,
+		// formatter
+		"python.formatting.provider": "black",
+		"python.formatting.blackArgs": [
+			"--line-length",
+			"119"
+		],
+		"editor.formatOnSave": true,
+		// type check
+		"python.analysis.typeCheckingMode": "strict"
+	},
+	"extensions": [
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"njpwerner.autodocstring"
+	]
+}
