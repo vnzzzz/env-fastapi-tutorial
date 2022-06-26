@@ -20,7 +20,8 @@ services:
       - traefik.enable=true
       - traefik.http.routers.env-fastapi.entrypoints=web
       - traefik.http.routers.env-fastapi.rule=Host(`env-fastapi.localhost`)
-
+    depends_on:
+      - db
   db:
     container_name: postgres
     hostname: postgres
@@ -29,10 +30,10 @@ services:
     build:
       context: ./db
       dockerfile: Dockerfile
-    ports:
-      - 9000:5432
     volumes:
       - ./db/postgres_data:/var/lib/postgresql/data/
+    networks:
+      - web
     environment:
       - POSTGRES_USER=fastapi
       - POSTGRES_PASSWORD=fastapi
