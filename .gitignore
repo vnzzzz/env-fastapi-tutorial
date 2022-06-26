@@ -6,3 +6,6 @@ api/app/app/*
 
 # git
 !.gitkeep
+
+# postgres
+**/postgres_data
