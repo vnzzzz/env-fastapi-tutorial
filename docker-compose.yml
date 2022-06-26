@@ -2,8 +2,8 @@ version: "3.9"
 
 services:
   api:
-    container_name: env-fastapi
-    hostname: env-fastapi
+    container_name: fastapi
+    hostname: fastapi
     restart: always
     tty: true
     build:
@@ -20,6 +20,21 @@ services:
       - traefik.enable=true
       - traefik.http.routers.env-fastapi.entrypoints=web
       - traefik.http.routers.env-fastapi.rule=Host(`env-fastapi.localhost`)
+
+  db:
+    container_name: postgres
+    hostname: postgres
+    restart: always
+    tty: true
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    volumes:
+      - ./db/postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=fastapi
+      - POSTGRES_PASSWORD=fastapi
+      - POSTGRES_DB=fastapi
 
 networks:
   web:

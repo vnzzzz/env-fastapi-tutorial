@@ -1,0 +1,9 @@
+{
+	"name": "env-fastapi",
+	"dockerComposeFile": [
+		"../../docker-compose.yml"
+	],
+	"service": "db",
+	"workspaceFolder": "../db",
+	"shutdownAction": "stopCompose"
+}
