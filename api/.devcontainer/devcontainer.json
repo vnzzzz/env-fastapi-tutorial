@@ -9,9 +9,14 @@
 		// linter
 		"python.linting.pylintEnabled": false,
 		"python.linting.flake8Enabled": true,
+		"python.linting.flake8Path": ".venv/bin/flake8",
+		"python.linting.flake8Args": [
+			"--ignore=E501"
+		],
 		"python.linting.lintOnSave": true,
 		// formatter
 		"python.formatting.provider": "black",
+		"python.formatting.blackPath": ".venv/bin/black",
 		"python.formatting.blackArgs": [
 			"--line-length",
 			"119"

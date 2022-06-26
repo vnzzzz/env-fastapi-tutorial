@@ -13,6 +13,6 @@
 ## 構築メモ
 
 - pythonコードを書くときは、devcontainerの中で実施する
-    line, format, 型なども見てくれる
+    lint, format, 型なども見てくれる
 
-- 最新版を反映させるときはdevcontainerをリビルドする
+- 最新版を反映させるときはdevcontainerの中で`rebuild container`する
