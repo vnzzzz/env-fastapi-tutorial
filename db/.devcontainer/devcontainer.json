@@ -1,5 +1,5 @@
 {
-	"name": "env-fastapi",
+	"name": "fastapi db",
 	"dockerComposeFile": [
 		"../../docker-compose.yml"
 	],
