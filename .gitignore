@@ -1,9 +1,6 @@
 # python
 **/__pycache__
 
-# app
-api/app/app/*
-
 # git
 !.gitkeep
 
