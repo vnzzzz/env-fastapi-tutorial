@@ -16,7 +16,3 @@ RUN poetry add fastapi sqlalchemy psycopg2 uvicorn gunicorn flake8 black
 
 # app
 COPY ./app/app /app/app
-
-# git
-RUN git init
-COPY ./.gitignore /app/.gitignore
